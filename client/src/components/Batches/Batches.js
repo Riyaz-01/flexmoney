@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Batches.scss';
 
 // assets
-import loader from '../../assets/button-loader.svg';
+import loader from '../../assets/loader-green.svg';
 import clock from '../../assets/clock.png';
 
 // api
@@ -36,24 +36,28 @@ const Batches = ({
 	useEffect(() => {
 		getAllBatches();
 	}, []);
+
 	return (
 		<>
 			<div className='batches__container'>
-				{batches.map((batch) => {
-					return (
-						<div
-							className={
-								'batches' +
-								(batch.id == batch_id ? ' selected' : '') +
-								(disabled ? ' disabled' : '')
-							}
-							onClick={() => {
-								if (!disabled) setBatch_id(batch.id);
-							}}
-						>
-							{loading ? (
-								<img src={loader} alt='loading' width={34} />
-							) : (
+				<div className='loader-container'>
+					{loading && (
+						<img src={loader} alt='loading' width={40} className='loader' />
+					)}
+				</div>
+				{!loading &&
+					batches.map((batch) => {
+						return (
+							<div
+								className={
+									'batches' +
+									(batch.id == batch_id ? ' selected' : '') +
+									(disabled ? ' disabled' : '')
+								}
+								onClick={() => {
+									if (!disabled) setBatch_id(batch.id);
+								}}
+							>
 								<>
 									<div className='timing'>
 										<img src={clock} alt='time' />
@@ -73,10 +77,9 @@ const Batches = ({
 									</div>
 									<div className='fee '>₹ {batch.fee}</div>
 								</>
-							)}
-						</div>
-					);
-				})}
+							</div>
+						);
+					})}
 			</div>
 		</>
 	);

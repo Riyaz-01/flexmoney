@@ -11,7 +11,6 @@ import { useNavigate } from 'react-router-dom';
 // components
 import FormButton from '../../components/FormButton/FormButton';
 import Batches from '../../components/Batches/Batches';
-import StatusTag from '../../components/StatusTag/StatusTag';
 import Payments from '../../components/Payments/Payments';
 import getUserFromLocalStorage from '../../helpers/getUserFromLocalStorage';
 import { readUser, updateUser } from '../../api/user';
