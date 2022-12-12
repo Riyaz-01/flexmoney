@@ -35,7 +35,7 @@ const Batches = ({
 
 	useEffect(() => {
 		getAllBatches();
-	}, [batch_id]);
+	}, []);
 	return (
 		<>
 			<div className='batches__container'>
