@@ -124,7 +124,7 @@ const Payments = ({ id = '', user = {} }) => {
 			<h6>Payment Status : </h6>
 			<StatusTag color={paymentStatus ? 'green' : 'red'}>
 				{loading ? (
-					<img src={loader} alt='loading'></img>
+					<img src={loader} alt='loading' width={20}></img>
 				) : paymentStatus === true ? (
 					'Completed'
 				) : (
