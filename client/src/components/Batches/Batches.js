@@ -40,11 +40,11 @@ const Batches = ({
 	return (
 		<>
 			<div className='batches__container'>
-				<div className='loader-container'>
-					{loading && (
+				{loading && (
+					<div className='loader-container'>
 						<img src={loader} alt='loading' width={40} className='loader' />
-					)}
-				</div>
+					</div>
+				)}
 				{!loading &&
 					batches.map((batch) => {
 						return (
