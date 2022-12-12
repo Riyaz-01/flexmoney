@@ -49,7 +49,7 @@ const Profile = () => {
 			setEdit(true);
 			return;
 		}
-		setEditLoading(false);
+		setEditLoading(true);
 		const res = await updateUser(userData.id, { batch_id: batch_id });
 		switch (res.code) {
 			case 200:
