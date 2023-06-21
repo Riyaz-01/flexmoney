@@ -18,7 +18,7 @@ const Illustration = () => {
 	};
 	return (
 		<div className='illustration__container'>
-			<div className='illustration__title'>Flexmoney</div>
+			<div className='illustration__title'>Yoga Registeration</div>
 			<div className='illustration__quote'>
 				The nature of yoga is to shine the light of awareness into the darkest
 				corners of the body.
